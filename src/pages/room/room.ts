@@ -4,8 +4,6 @@ import { AddRoomPage } from '../add-room/add-room';
 import { HomePage } from '../home/home';
 import * as firebase from 'firebase';
 
-
-
 @IonicPage()
 @Component({
     selector: 'page-room',
@@ -33,7 +31,7 @@ export class RoomPage {
     joinRoom(room) {
         //go to the chat page
         //with room-id as key
-        //user as nickname
+        //nickname of the logged in user
         this.navCtrl.setRoot(HomePage, {
             key: room.key,
             nickname: this.navParams.get("nickname")

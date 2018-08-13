@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
-import { RoomPage } from '../room/room'
+import { TabsPage } from '../tabs/tabs';
 
 
 @IonicPage()
@@ -19,9 +19,7 @@ export class SigninPage {
     }
 
     enterNickname() {
-        this.navCtrl.setRoot(RoomPage, {
-            nickname: this.data.nickname
-        });
+        window.localStorage.setItem('userName', this.data.nickname);
+        this.navCtrl.setRoot(TabsPage);
     }
-
 }

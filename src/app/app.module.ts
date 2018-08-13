@@ -9,7 +9,9 @@ import { HomePage } from '../pages/home/home';
 import { AddRoomPage } from '../pages/add-room/add-room';
 import { RoomPage } from '../pages/room/room';
 import { SigninPage } from '../pages/signin/signin';
-
+import { NotePage } from '../pages/note/note';
+import { ManageNotePage } from '../pages/manage-note/manage-note';
+import { TabsPage } from '../pages/tabs/tabs';
 
 @NgModule({
     declarations: [
@@ -17,7 +19,10 @@ import { SigninPage } from '../pages/signin/signin';
         HomePage,
         AddRoomPage,
         RoomPage,
-        SigninPage
+        SigninPage,
+        NotePage,
+        ManageNotePage,
+        TabsPage
     ],
     imports: [
         BrowserModule,
@@ -29,7 +34,10 @@ import { SigninPage } from '../pages/signin/signin';
         HomePage,
         AddRoomPage,
         RoomPage,
-        SigninPage
+        SigninPage,
+        NotePage,
+        ManageNotePage,
+        TabsPage
     ],
     providers: [
         StatusBar,

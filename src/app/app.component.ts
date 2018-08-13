@@ -6,15 +6,13 @@ import * as firebase from 'firebase';
 
 import { SigninPage } from '../pages/signin/signin';
 
-
-//add you config from firebase
 const config = {
     apiKey: "****",
     authDomain: "****",
     databaseURL: "****",
     projectId: "****",
     storageBucket: "****",
-    messagingSenderId: "****",
+    messagingSenderId: "****"
 };
 
 
