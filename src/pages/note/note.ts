@@ -12,12 +12,13 @@ import { ManageNotePage } from '../manage-note/manage-note';
 export class NotePage {
     notes = [];
     ref = firebase.database().ref('notes/');
+    user: string = window.localStorage.getItem('userName');
 
     constructor(
         public navCtrl: NavController,
         public navParams: NavParams
     ) {
-        this.ref.on('value', resp => {
+        this.ref.orderByChild('user').equalTo(this.user).on('value', resp => {
             this.notes = [];
             this.notes = snapshotToArray(resp);
         });

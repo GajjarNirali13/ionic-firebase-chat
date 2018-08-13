@@ -34,7 +34,7 @@ export class RoomPage {
         //nickname of the logged in user
         this.navCtrl.setRoot(HomePage, {
             key: room.key,
-            nickname: this.navParams.get("nickname")
+            nickname: window.localStorage.getItem('userName')
         });
     }
 

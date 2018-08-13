@@ -10,7 +10,8 @@ import * as firebase from 'firebase';
     templateUrl: 'manage-note.html',
 })
 export class ManageNotePage {
-    pageTitle: string = "Add"
+    pageTitle: string = "Add";
+    btnText: string = "Save";
     userName: string;
     noteForm: FormGroup;
     data = { id: 0, user: '', title: '', description: '' };
@@ -35,6 +36,7 @@ export class ManageNotePage {
 
     setFormData() {
         this.pageTitle = "Edit";
+        this.btnText = "Update";
         this.noteForm = this.fb.group({
             title: [this.note.title, Validators.required],
             description: [this.note.description, Validators.required]
