@@ -1,19 +1,49 @@
 <ion-header>
     <ion-navbar>
-        <ion-title>Signin</ion-title>
+        Signin
     </ion-navbar>
 </ion-header>
 
-<ion-content padding>
-    <form (ngSubmit)="enterNickname()">
+<ion-content>
+    <form [formGroup]="loginForm" (ngSubmit)="login(loginForm)">
         <ion-list>
             <ion-item>
-                <ion-label floating>Enter your Nickname</ion-label>
-                <ion-input type="text" [(ngModel)]="data.nickname" name="nickname" required=""></ion-input>
+                <ion-label floating>Email
+                    <sup>*</sup>
+                </ion-label>
+                <ion-input type="email" formControlName="email"></ion-input>
+
             </ion-item>
+            <div *ngIf="loginForm.controls['email'].errors && loginForm.controls['email'].touched" class="error-msg custom-error-msg">
+                <div [hidden]="!loginForm.controls['email'].errors.required && !loginForm.controls['email'].errors.whitespace" class="err-msg">
+                    Email is required.
+                </div>
+            </div>
             <ion-item>
-                <button ion-button full round color="secondary" type="submit">Enter</button>
+                <ion-label floating>Password
+                    <sup>*</sup>
+                </ion-label>
+                <ion-input type="password" formControlName="password"></ion-input>
+
             </ion-item>
+            <div *ngIf="loginForm.controls['password'].errors && loginForm.controls['password'].touched" class="error-msg custom-error-msg">
+                <div [hidden]="!loginForm.controls['password'].errors.required && !loginForm.controls['password'].errors.whitespace" class="err-msg">
+                    Password is required.
+                </div>
+            </div>
         </ion-list>
+        <button ion-button full round color="secondary" type="submit" [disabled]="loginForm.invalid">Login</button>
     </form>
+    <ion-list>
+
+        <button ion-button icon-left block clear (click)="loginWithGoogle()">
+            <ion-icon name="logo-google"></ion-icon>
+            Log in with Google
+        </button>
+
+        <button ion-button icon-left block clear (click)="signup()">
+            <ion-icon name="person-add"></ion-icon>
+            Sign up
+        </button>
+    </ion-list>
 </ion-content>

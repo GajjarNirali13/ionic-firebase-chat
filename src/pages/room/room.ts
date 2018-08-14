@@ -32,9 +32,10 @@ export class RoomPage {
         //go to the chat page
         //with room-id as key
         //nickname of the logged in user
+        let logged = JSON.parse(window.localStorage.getItem('userInfo'));
         this.navCtrl.setRoot(HomePage, {
             key: room.key,
-            nickname: window.localStorage.getItem('userName')
+            nickname: logged.userId
         });
     }
 

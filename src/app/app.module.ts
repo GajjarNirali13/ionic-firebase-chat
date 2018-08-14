@@ -9,6 +9,7 @@ import { HomePage } from '../pages/home/home';
 import { AddRoomPage } from '../pages/add-room/add-room';
 import { RoomPage } from '../pages/room/room';
 import { SigninPage } from '../pages/signin/signin';
+import { SignupPage } from '../pages/signup/signup';
 import { NotePage } from '../pages/note/note';
 import { ManageNotePage } from '../pages/manage-note/manage-note';
 import { TabsPage } from '../pages/tabs/tabs';
@@ -22,7 +23,8 @@ import { TabsPage } from '../pages/tabs/tabs';
         SigninPage,
         NotePage,
         ManageNotePage,
-        TabsPage
+        TabsPage,
+        SignupPage
     ],
     imports: [
         BrowserModule,
@@ -35,6 +37,7 @@ import { TabsPage } from '../pages/tabs/tabs';
         AddRoomPage,
         RoomPage,
         SigninPage,
+        SignupPage,
         NotePage,
         ManageNotePage,
         TabsPage

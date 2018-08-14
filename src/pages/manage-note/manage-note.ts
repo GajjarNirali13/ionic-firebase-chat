@@ -12,7 +12,7 @@ import * as firebase from 'firebase';
 export class ManageNotePage {
     pageTitle: string = "Add";
     btnText: string = "Save";
-    userName: string;
+    userName: any;
     noteForm: FormGroup;
     data = { id: 0, user: '', title: '', description: '' };
     ref = firebase.database().ref('notes/')
@@ -44,7 +44,7 @@ export class ManageNotePage {
     }
 
     ionViewDidLoad() {
-        this.userName = window.localStorage.getItem('userName');
+        this.userName = JSON.parse(window.localStorage.getItem('userInfo'));
         this.myRand = this.random();
     }
 
@@ -65,7 +65,7 @@ export class ManageNotePage {
         let newData = this.ref.push();
         newData.set({
             id: this.myRand,
-            user: this.userName,
+            user: this.userName.userId,
             title: this.noteForm.get('title').value,
             description: this.noteForm.get('description').value
         });
@@ -75,7 +75,7 @@ export class ManageNotePage {
     updateData() {
         firebase.database().ref('notes/' + this.note.key).update({
             id: this.myRand,
-            user: this.userName,
+            user: this.userName.userId,
             title: this.noteForm.get('title').value,
             description: this.noteForm.get('description').value
         });

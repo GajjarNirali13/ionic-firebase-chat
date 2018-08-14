@@ -7,6 +7,8 @@ import * as firebase from 'firebase';
 import { SigninPage } from '../pages/signin/signin';
 
 
+
+
 const config = {
     apiKey: "****",
     authDomain: "****",
